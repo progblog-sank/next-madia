@@ -23,8 +23,8 @@ const Home: NextPage = ({ articles }) => {
 };
 
 
-const url = 'https://create-next.microcms.io/api/v1/media'
-const key = { headers: { "x-microcms-api-key": '797ad38d37554e9297d8feb731866802a550' } }
+const url = process.env.BASE_URL as string
+const key = { headers: { "x-microcms-api-key": `${process.env.API_KEY}` } }
 export async function getServerSideProps() {
   const json = await fetch(url, key).then((r) => r.json());
   const articles = json.contents;
