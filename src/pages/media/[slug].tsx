@@ -14,7 +14,6 @@ const MediaSlug: NextPage = ({ article }) => {
     )
 };
 
-
 const url = process.env.NEXT_PUBLIC_BASE_URL as string
 const key = { headers: { "x-microcms-api-key": `${process.env.NEXT_PUBLIC_API_KEY}` } }
 export async function getServerSideProps() {
