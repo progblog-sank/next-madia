@@ -8,13 +8,14 @@ export async function getServerSideProps() {
   const collectionArray = await collection.doc('3JNpSoaDqHnnD26lysKY').get();
   const data = collectionArray.data()
   console.log(collectionArray.data())
-  return { props: { data } };
+  const jsonData = JSON.parse(JSON.stringify(data));
+  return { props: { jsonData } };
 }
 
 
 // @ts-ignore
-const FIRESTORE: NextPage = ({ data }) => {
-  return <p>{data.book_title}</p>
+const FIRESTORE: NextPage = ({ jsonData }) => {
+  return <p>{jsonData.book_title}</p>
 
 };
 
