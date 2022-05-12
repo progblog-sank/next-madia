@@ -15,7 +15,13 @@ export async function getServerSideProps() {
 
 // @ts-ignore
 const FIRESTORE: NextPage = ({ jsonData }) => {
-  return <p>{jsonData.book_title}</p>
+  return (
+    <>
+      <p><img src={jsonData.book_img} alt={jsonData.book_title} /></p>
+      <p>{jsonData.book_title}</p>
+      <p>{jsonData.book_impression}</p>
+    </>
+  )
 
 };
 
