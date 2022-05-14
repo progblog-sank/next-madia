@@ -41,7 +41,12 @@ const Home: NextPage = ({ articles, totalCount }) => {
             </li>
           ))}
         </ul>
-        <Link href="/firebase/node">内田百閒の冥途旅順入場式</Link>
+        <p>
+          <Link href="/firebase/node"> &gt; 内田百閒の冥途旅順入場式（node）</Link>
+        </p>
+        <p>
+          <Link href="/firebase/client"> &gt; （client）</Link>
+        </p>
       </>
     )
   } else {
