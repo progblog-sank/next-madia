@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+import Book from '../../compnents/book';
+import Title from '../../compnents/title';
 import admin from '../../utils/firebase/nodeInit'
 
 
@@ -21,10 +23,8 @@ export async function getServerSideProps() {
 const NODEFIRE: NextPage = ({ jsonData, jsonData_2 }) => {
   return (
     <>
-      <p>{ jsonData_2.name}</p>
-      <p><img src={jsonData.book_img} alt={jsonData.book_title} /></p>
-      <p>{jsonData.book_title}</p>
-      <p>{jsonData.book_impression}</p>
+      <Title text={jsonData_2} />
+      <Book book={jsonData} />
     </>
   )
 
